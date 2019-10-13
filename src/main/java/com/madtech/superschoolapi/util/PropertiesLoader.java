@@ -1,4 +1,4 @@
-package com.madtech.superschool.util;
+package com.madtech.superschoolapi.util;
 
 import java.io.IOException;
 import java.io.InputStream;

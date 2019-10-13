@@ -1,4 +1,4 @@
-package com.madtech.superschool.util;
+package com.madtech.superschoolapi.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
