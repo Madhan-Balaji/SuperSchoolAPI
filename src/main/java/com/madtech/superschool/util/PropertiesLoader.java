@@ -12,6 +12,7 @@ public class PropertiesLoader {
 	
 	public PropertiesLoader() {
 		this.classLoader = getClass().getClassLoader();
+		this.prop = new Properties();
 	}
 	
 	public Properties getPersistenceProperties() {
@@ -25,8 +26,8 @@ public class PropertiesLoader {
 	private Properties getProperties(String fileName) {
 		this.input = this.classLoader.getResourceAsStream(fileName);
 		try {
-			this.prop.clear();
-			this.prop.load(input);
+			if(!this.prop.isEmpty()) this.prop.clear();
+			this.prop.load(this.input);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
