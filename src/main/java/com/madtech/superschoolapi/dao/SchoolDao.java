@@ -22,26 +22,11 @@ public class SchoolDao {
 	private Database db;
 	private Connection connection;
 	private Statement statement;
-	private PreparedStatement preparedStatement;
 	private CallableStatement callableStatement;
-
-	public static void main(String args[]) {
-		SchoolDao dao = new SchoolDao();
-		dao.getAllSchool();
-		ObjectMapper m = new ObjectMapper();
-		School schools = dao.getSchoolById("9d72efb5-13db-4d70-971c-dd1df3411ec5");
-		try {
-			System.out.println(m.writeValueAsString(schools));
-		} catch (JsonProcessingException e) {
-			e.printStackTrace();
-		}
-
-	}
 
 	public SchoolDao() {
 		this.db = new Database();
 		this.connection = db.connect();
-		this.preparedStatement = null;
 		this.callableStatement = null;
 
 		try {
